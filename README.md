@@ -1,5 +1,7 @@
+This the link for the vercel deployement.
+**[Link](https://simulink-mini.vercel.app/)**
 
-**[This is the link for the simulink-mini -> ](https://simulink-mini.vercel.app/)**
+This is the demo video of the simulink-mini
   [simulink-mini-recording.webm](https://github.com/user-attachments/assets/1ae97a57-6046-47db-ba45-43bf541cdd42)
 
 
