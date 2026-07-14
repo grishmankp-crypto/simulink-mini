@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    {"id": "ref",   "type": "Constant",   "params": {"value": 1.0}},
+    {"id": "sum_e", "type": "Sum",        "signs": ["+", "-"]},
+    {"id": "pid1",  "type": "PID",        "params": {"Kp": 1.0, "Ki": 1.0, "Kd": 0.0, "Tf": 0.05}},
+    {"id": "plant", "type": "Integrator", "params": {"initial": 0.0}},
+    {"id": "scope", "type": "Scope"}
+  ],
+  "edges": [
+    {"src": "ref",   "dst": "sum_e", "dstInput": 0},
+    {"src": "plant", "dst": "sum_e", "dstInput": 1},
+    {"src": "sum_e", "dst": "pid1",  "dstInput": 0},
+    {"src": "pid1",  "dst": "plant", "dstInput": 0},
+    {"src": "plant", "dst": "scope", "dstInput": 0}
+  ]
+}

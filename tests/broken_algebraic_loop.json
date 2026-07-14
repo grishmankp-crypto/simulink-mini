@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {"id": "ref",   "type": "Constant", "params": {"value": 1.0}},
+    {"id": "sum1",  "type": "Sum",      "signs": ["+", "-"]},
+    {"id": "gain1", "type": "Gain",     "params": {"k": 2.0}}
+  ],
+  "edges": [
+    {"src": "ref",   "dst": "sum1",  "dstInput": 0},
+    {"src": "gain1", "dst": "sum1",  "dstInput": 1},
+    {"src": "sum1",  "dst": "gain1", "dstInput": 0}
+  ]
+}

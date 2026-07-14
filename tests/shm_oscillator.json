@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {"id": "int_v", "type": "Integrator", "params": {"initial": 0.0}},
+    {"id": "int_x", "type": "Integrator", "params": {"initial": 1.0}},
+    {"id": "gain_a", "type": "Gain", "params": {"k": -4.0}},
+    {"id": "scope_x", "type": "Scope"}
+  ],
+  "edges": [
+    {"src": "int_x",  "dst": "gain_a",  "dstInput": 0},
+    {"src": "gain_a", "dst": "int_v",   "dstInput": 0},
+    {"src": "int_v",  "dst": "int_x",   "dstInput": 0},
+    {"src": "int_x",  "dst": "scope_x", "dstInput": 0}
+  ]
+}

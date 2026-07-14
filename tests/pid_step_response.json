@@ -1,0 +1,11 @@
+{
+  "blocks": [
+    {"id": "step", "type": "Constant", "params": {"value": 2.0}},
+    {"id": "pid1", "type": "PID", "params": {"Kp": 3.0, "Ki": 5.0, "Kd": 0.5, "Tf": 0.02}},
+    {"id": "scope1", "type": "Scope"}
+  ],
+  "edges": [
+    {"src": "step", "dst": "pid1",   "dstInput": 0},
+    {"src": "pid1", "dst": "scope1", "dstInput": 0}
+  ]
+}

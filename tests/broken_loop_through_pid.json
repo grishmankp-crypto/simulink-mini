@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {"id": "ref",  "type": "Constant", "params": {"value": 1.0}},
+    {"id": "sum1", "type": "Sum",      "signs": ["+", "-"]},
+    {"id": "pid1", "type": "PID",      "params": {"Kp": 2.0, "Ki": 1.0, "Kd": 0.1, "Tf": 0.02}}
+  ],
+  "edges": [
+    {"src": "ref",  "dst": "sum1", "dstInput": 0},
+    {"src": "pid1", "dst": "sum1", "dstInput": 1},
+    {"src": "sum1", "dst": "pid1", "dstInput": 0}
+  ]
+}
