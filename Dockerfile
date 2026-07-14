@@ -14,6 +14,9 @@ WORKDIR /app
 # 4. Copy your entire project into the container
 COPY . .
 
+# CRUCIAL: Install pybind11 first so CMake can find it and build the extension module!
+RUN pip install pybind11
+
 # 5. Build the C++ engine and pybind11 binaries
 RUN mkdir build && cd build && \
     cmake .. -DCMAKE_BUILD_TYPE=Release && \
